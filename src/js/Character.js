@@ -14,6 +14,9 @@
  */
 export default class Character {
   constructor(level, type = 'generic') {
+    if (new.target) {
+      throw new Error('Error, this class cannot be created');
+    }
     this.level = level;
     this.attack = 0;
     this.defence = 0;

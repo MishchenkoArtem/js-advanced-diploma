@@ -1,3 +1,8 @@
+import themes from './themes';
+import PositionedCharacter from './PositionedCharacter';
+import { generateTeam } from './generators';
+import Bowman from './characters/Bowman';
+
 export default class GameController {
   constructor(gamePlay, stateService) {
     this.gamePlay = gamePlay;
@@ -5,6 +10,8 @@ export default class GameController {
   }
 
   init() {
+    this.gamePlay.drawUi(themes.prairie);
+    this.gamePlay.redrawPositions(new PositionedCharacter());
     // TODO: add event listeners to gamePlay events
     // TODO: load saved stated from stateService
   }
